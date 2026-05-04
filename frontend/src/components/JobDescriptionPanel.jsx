@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { FiBriefcase } from 'react-icons/fi';
 
-export default function JobDescriptionPanel({ onSubmit }) {
-  const [title, setTitle] = useState('Senior Software Engineer');
-  const [description, setDescription] = useState('We are looking for a Python developer with experience in Machine Learning, Docker, AWS, and modern web frameworks like FastAPI and React.');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+export default function JobDescriptionPanel({ onSubmit, initialJob }) {
+  const [title, setTitle] = useState(initialJob?.title || 'Senior Software Engineer');
+  const [description, setDescription] = useState(initialJob?.description || 'We are looking for a Python developer with experience in Machine Learning, Docker, AWS, and modern web frameworks like FastAPI and React.');
+  const [isSubmitted, setIsSubmitted] = useState(!!initialJob);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -43,9 +43,19 @@ class JobRequest(BaseModel):
 @router.post("/analyze-job")
 async def analyze_job(job: JobRequest):
     global store_job, store_analyses
+    
+    # Check if job actually changed
+    is_new_job = True
+    if store_job:
+        if store_job.title == job.title and store_job.description == job.description:
+            is_new_job = False
+            
     store_job = JobDescription(title=job.title, description=job.description)
-    # Clear previous analyses when job changes
-    store_analyses = {}
+    
+    if is_new_job:
+        # Clear previous analyses only when job actually changes
+        store_analyses = {}
+        
     return {"message": "Job description saved.", "job": store_job}
 
 

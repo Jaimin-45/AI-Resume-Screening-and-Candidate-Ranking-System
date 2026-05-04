@@ -53,7 +53,7 @@ export default function CandidateInsightsModal({ candidateId, onClose, apiBase }
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
-          <p className="text-gray-400 text-sm animate-pulse">Gemini is analyzing the candidate...</p>
+          <p className="text-gray-400 text-sm animate-pulse">Analyzing the candidate...</p>
         </div>
       </div>
     );
@@ -443,7 +443,7 @@ export default function CandidateInsightsModal({ candidateId, onClose, apiBase }
                 <div className={`px-4 py-2 rounded-xl text-sm font-bold border ${getActionStyle(recruiter_tools.recommended_action)}`}>
                   {recruiter_tools.recommended_action}
                 </div>
-                <p className="text-gray-400 text-sm">Gemini's recommended next step for this candidate</p>
+                <p className="text-gray-400 text-sm">Recommended next step for this candidate</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
