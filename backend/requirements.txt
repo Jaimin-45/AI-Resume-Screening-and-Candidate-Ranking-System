@@ -5,6 +5,6 @@ python-docx
 websockets
 python-multipart
 pydantic
-google-generativeai
+google-genai
 openpyxl
 python-dotenv
