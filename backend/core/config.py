@@ -10,7 +10,7 @@ class Settings:
     
     # Gemini API Configuration
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-    GEMINI_MODEL: str = "gemini-2.5-flash"
+    GEMINI_MODEL: str = "gemini-2.5-flash"  # confirmed available on this API key
 
     def __init__(self):
         os.makedirs(self.UPLOAD_DIR, exist_ok=True)
